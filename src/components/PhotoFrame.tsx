@@ -170,15 +170,29 @@ export default function PhotoFrame() {
     let bgClass = 'bg-gradient-to-br from-gray-900 to-gray-800';
     
     switch (theme) {
-      case 'geometric':
-        bgClass = 'bg-[url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'https://static8.depositphotos.com/1154062/1071/v/450/depositphotos_10712741-stock-illustration-white-crumpled-abstract-background.jpg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")]';
-        break;
-      case 'texture':
-        bgClass = 'bg-[url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'https://img.freepik.com/fotos-premium/textura-fondo-papel-blanco_1036998-289261.jpg\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E")]';
-        break;
       case 'minimal':
         bgClass = 'bg-black';
         break;
+      case 'geometric':
+        bgClass = 'bg-[url("https://png.pngtree.com/thumb_back/fw800/background/20230704/pngtree-abstract-geometric-background-in-black-a-fresh-design-perfect-for-presentations-image_3717055.jpg")]';
+        break;
+      case 'texture':
+        bgClass = 'bg-[url("https://img.pikbest.com/wp/202344/gray-stone-texture-elegant-black-perfect-as-a-wallpaper-or-background_9915971.jpg!w700wp")]';
+        break;
+      case 'patterns':
+        bgClass = 'bg-[url("https://image.slidesdocs.com/responsive-images/background/sleek-onyx-patterns-a-stylish-and-refined-texture-powerpoint-background_f4c1a14a08__960_540.jpg")]';
+        break;
+      case 'natural':
+        bgClass = 'bg-[url("https://img.freepik.com/fotos-premium/textura-hojas-verdes-fondo-naturaleza_625816-186.jpg")]';
+        break;
+      case 'retro':
+        bgClass = 'bg-[url("https://static.vecteezy.com/system/resources/thumbnails/011/642/463/original/colorful-neon-raining-particles-abstract-animation-particle-background-speedy-futuristic-laser-space-technology-cyber-animation-effect-illustration-free-video.jpg")]';
+        break;
+      case 'gradient':
+        bgClass = 'bg-[url("https://wallpapers.com/images/hd/dark-gradient-f28kcnkpm1rg5of0.jpg")]';
+        break;
+      default:
+        bgClass = 'bg-gradient-to-br from-gray-900 to-gray-800';
     }
 
     return {
