@@ -11,22 +11,42 @@ const themes = [
   {
     id: 'default',
     name: 'Defecto',
-    preview: 'bg-gray-700' // Este sigue teniendo el gradiente como en el ejemplo original.
-  },
-  {
-    id: 'geometric',
-    name: 'Geométrico',
-    preview: 'https://static8.depositphotos.com/1154062/1071/v/450/depositphotos_10712741-stock-illustration-white-crumpled-abstract-background.jpg' // URL para el fondo geométrico
-  },
-  {
-    id: 'texture',
-    name: 'Textura',
-    preview: 'https://img.freepik.com/fotos-premium/textura-fondo-papel-blanco_1036998-289261.jpg' // URL para la textura
+    preview: 'bg-gray-800',
   },
   {
     id: 'minimal',
     name: 'Minimalista',
-    preview: 'bg-black' // Fondo minimalista
+    preview: 'bg-black'
+  },
+  {
+    id: 'geometric',
+    name: 'Geométrico',
+    preview: 'https://png.pngtree.com/thumb_back/fw800/background/20230704/pngtree-abstract-geometric-background-in-black-a-fresh-design-perfect-for-presentations-image_3717055.jpg' // URL para el fondo geométrico
+  },
+  {
+    id: 'texture',
+    name: 'Textura',
+    preview: 'https://img.pikbest.com/wp/202344/gray-stone-texture-elegant-black-perfect-as-a-wallpaper-or-background_9915971.jpg!w700wp' // URL para la textura
+  },
+  {
+    id: 'patterns',
+    name: 'Patrones',
+    preview: 'https://image.slidesdocs.com/responsive-images/background/sleek-onyx-patterns-a-stylish-and-refined-texture-powerpoint-background_f4c1a14a08__960_540.jpg' // URL para los patrones
+  },
+  {
+    id: 'natural',
+    name: 'Naturaleza',
+    preview: 'https://img.freepik.com/fotos-premium/textura-hojas-verdes-fondo-naturaleza_625816-186.jpg' // URL para los patrones
+  },
+  {
+    id: 'retro',
+    name: 'Retro',
+    preview: 'https://static.vecteezy.com/system/resources/thumbnails/011/642/463/original/colorful-neon-raining-particles-abstract-animation-particle-background-speedy-futuristic-laser-space-technology-cyber-animation-effect-illustration-free-video.jpg' // URL para los patrones
+  },
+  {
+    id: 'gradient',
+    name: 'Gradiente',
+    preview: 'https://wallpapers.com/images/hd/dark-gradient-f28kcnkpm1rg5of0.jpg'
   }
 ];
 
@@ -49,12 +69,13 @@ export default function ThemeSelector({ currentTheme, onThemeSelect, onClose }: 
             <button
               key={theme.id}
               onClick={() => onThemeSelect(theme.id)}
-              className={`relative aspect-video w-full rounded-xl overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all`}
-              style={{
-                backgroundImage: theme.preview.startsWith('http') ? `url(${theme.preview})` : undefined,
+              className={`relative aspect-video w-full rounded-xl overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all 
+                ${theme.preview.startsWith('http') ? '' : theme.preview}`} // Si es URL, no aplicar la clase de fondo, si es color aplicar
+              style={theme.preview.startsWith('http') ? {
+                backgroundImage: `url(${theme.preview})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-              }}
+              } : {}}
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 {currentTheme === theme.id && (
